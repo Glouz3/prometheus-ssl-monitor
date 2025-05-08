@@ -1,0 +1,4 @@
+*.log
+*.tmp
+*.bak
+prometheus/targets/ssl_targets.json
