@@ -1,0 +1,14 @@
+global:
+  smtp_smarthost: '${EMAIL_SMTP_HOST}:${EMAIL_SMTP_PORT}'
+  smtp_from: '${EMAIL_FROM}'
+  smtp_auth_username: '${EMAIL_AUTH_USERNAME}'
+  smtp_auth_password: '${EMAIL_AUTH_PASSWORD}'
+
+route:
+  receiver: email-alert
+
+receivers:
+  - name: email-alert
+    email_configs:
+      - to: '${EMAIL_TO}'
+        send_resolved: true
