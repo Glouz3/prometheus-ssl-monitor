@@ -1,1 +1,17 @@
-# List of certificates to check
+[
+  {
+    "targets": [
+      "host.docker.internal:443"
+    ]
+  },
+  {
+    "targets": [
+      "example.com:443"
+    ]
+  },
+  {
+    "targets": [
+      "anotherdomain.com:8443"
+    ]
+  }
+]
