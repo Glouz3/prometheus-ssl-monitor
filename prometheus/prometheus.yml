@@ -1,6 +1,11 @@
 global:
   scrape_interval: 60s
 
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ['alertmanager:9093']
+
 rule_files:
   - "rules.yml"
 
@@ -9,12 +14,10 @@ scrape_configs:
     metrics_path: /probe
     params:
       module: [http_2xx]
-
     file_sd_configs:
       - files:
           - '/etc/prometheus/targets/ssl_targets.json'
         refresh_interval: 1m
-
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
